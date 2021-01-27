@@ -9,6 +9,8 @@ import Footer from '../src/components/Footer/index';
 import GitHubCorner from '../src/components/GitHubCorner/index';
 import QuizBackground from '../src/components/QuizBackground/index';
 import QuizLogo from '../src/components/QuizLogo/index';
+import Input from '../src/components/Input/index';
+import Button from '../src/components/Button/index';
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -50,18 +52,18 @@ export default function Home() {
               router.push(`/quiz?name=${name}`);
             }}
             >
-              <input
+              <Input
+                name="nomeDoUsuario"
                 onChange={(event) => {
-                  // State
-                  // name = event.target.value;
                   setName(event.target.value);
                 }}
                 placeholder="Diz aí seu nome pra jogar :)"
+                value={name}
               />
               {/* eslint-disable-next-line react/button-has-type */}
-              <button type="submit" disabled={name.length === 0}>
+              <Button type="submit" disabled={name.length === 0}>
                 JOGAR
-              </button>
+              </Button>
             </form>
           </Widget.Content>
         </Widget>
