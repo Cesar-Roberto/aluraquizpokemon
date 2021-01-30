@@ -54,10 +54,10 @@ export default function Home() {
           animate="show"
         >
           <Widget.Header>
-            <h1>Quiz Em Construção</h1>
+            <h1>Quiz Jogos Pokémon!</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>Aguarde enquanto preparamos um ótimo quiz para você!</p>
+            <p>Você se considera bom nos jogos de Pokémon?</p>
             <form onSubmit={(event) => {
               event.preventDefault();
               router.push(`/quiz?name=${name}`);
@@ -68,12 +68,12 @@ export default function Home() {
                 onChange={(event) => {
                   setName(event.target.value);
                 }}
-                placeholder="Diz aí seu nome pra jogar :)"
+                placeholder="Digite seu nome e prove!"
                 value={name}
               />
               {/* eslint-disable-next-line react/button-has-type */}
               <Button type="submit" disabled={name.length === 0}>
-                JOGAR
+                ACEITAR DESAFIO
               </Button>
             </form>
           </Widget.Content>
