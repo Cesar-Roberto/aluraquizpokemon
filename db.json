@@ -27,7 +27,8 @@
       }
     ],
     "external": [
-      ""
+      "https://alura-quiz.netmatioazi.vercel.app/",
+      "https://bbbquiz.kpmnta.vercel.app/"
     ],
     "theme": {
       "colors": {
