@@ -36,16 +36,19 @@ export default function Home() {
   const router = useRouter();
   const [name, setName] = React.useState('');
   const quizTitle = db.title;
+  const quizBackgound = db.bg;
+  const quizDescription = db.description;
+  const quizUrl = 'https://aluraquizpokemon.cesarrobertopg.vercel.app/';
 
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
         <title>{quizTitle}</title>
-        <meta property="og:title" content={quizTitle} />
-        <meta property="og:image" content={db.bg} />
-        <meta property="og:description" content={db.description} />
+        <meta property="og:title" content={quizTitle} key="ogtitle" />
+        <meta property="og:image" content={quizBackgound} key="ogimage" />
+        <meta property="og:description" content={quizDescription} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://aluraquizpokemon.cesarrobertopg.vercel.app/" />
+        <meta property="og:url" content={quizUrl} />
       </Head>
       <QuizContainer>
         <QuizLogo />
