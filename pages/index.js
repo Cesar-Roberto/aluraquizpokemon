@@ -111,6 +111,12 @@ export default function Home() {
                 return (
                   <li key={linkExterno}>
                     <Widget.Topic
+                      onClick={(event) => {
+                        if (name.length === 0) {
+                          event.preventDefault();
+                          alert('Insira o seu nome!');
+                        }
+                      }}
                       as={Link}
                       href={`/quiz/${projectName}___${gitHubUser}`}
                     >
