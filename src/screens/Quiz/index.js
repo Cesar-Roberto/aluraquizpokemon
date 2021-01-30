@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Lottie } from '@crello/react-lottie';
 import React from 'react';
+import Head from 'next/head';
 // import db from '../../../db.json';
 import Widget from '../../components/Widget';
 import QuizLogo from '../../components/QuizLogo';
@@ -161,7 +162,7 @@ const screenStates = {
   RESULT: 'RESULT',
 };
 
-export default function QuizPage({ externalQuestions, externalBg }) {
+export default function QuizPage({ externalQuestions, externalBg, externalTitle }) {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
   const [results, setResults] = React.useState([]);
   const totalQuestions = externalQuestions.length;
@@ -169,6 +170,7 @@ export default function QuizPage({ externalQuestions, externalBg }) {
   const questionIndex = currentQuestion;
   const question = externalQuestions[questionIndex];
   const bg = externalBg;
+  const quizTitle = externalTitle;
 
   function addResult(result) {
     setResults([
@@ -200,6 +202,9 @@ export default function QuizPage({ externalQuestions, externalBg }) {
 
   return (
     <QuizBackground backgroundImage={bg}>
+      <Head>
+        <title>{quizTitle}</title>
+      </Head>
       <QuizContainer>
         <QuizLogo />
         {screenState === screenStates.QUIZ && (

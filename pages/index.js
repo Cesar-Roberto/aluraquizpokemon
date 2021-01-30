@@ -35,11 +35,17 @@ export const QuizContainer = styled.div`
 export default function Home() {
   const router = useRouter();
   const [name, setName] = React.useState('');
+  const quizTitle = db.title;
 
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
-        <title>Alura Quiz - Pokémon!</title>
+        <title>{quizTitle}</title>
+        <meta property="og:title" content={quizTitle} />
+        <meta property="og:image" content={db.bg} />
+        <meta property="og:description" content={db.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://aluraquizpokemon.cesarrobertopg.vercel.app/" />
       </Head>
       <QuizContainer>
         <QuizLogo />
