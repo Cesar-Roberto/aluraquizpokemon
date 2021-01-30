@@ -14,7 +14,7 @@ import pikachuAnimation from '../animations/pikachuAnimation.json';
 function LoadingWidget() {
   return (
     <Widget>
-      <Widget.Header>
+      <Widget.Header style={{ display: 'flex', justifyContent: 'center' }}>
         Carregando...
       </Widget.Header>
 
